@@ -1,0 +1,28 @@
+{
+  "agent_id": "antigravity_v1",
+  "engine": "LiteRT-LM",
+  "acceleration": "GPU_BACKEND",
+  "skills": [
+    {
+      "name": "vision_scanner",
+      "type": "multimodal",
+      "model": "gemma-v4-lite",
+      "function": "detect_burnt_components"
+    },
+    {
+      "name": "audio_feedback",
+      "type": "tts",
+      "provider": "google_cloud",
+      "voice_params": {
+        "gender": "MALE",
+        "pitch": -2.0,
+        "speed": 0.9,
+        "style": "Neural2-D"
+      }
+    }
+  ],
+  "safety_protocols": {
+    "max_temp_celsius": 85,
+    "p2p_fallback_enabled": true
+  }
+}
